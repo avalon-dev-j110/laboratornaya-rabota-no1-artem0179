@@ -7,11 +7,25 @@ public class Main {
     /*
      * FIXME(Студент): Измените определение метода так, чтобы он стал точкой входа в приложение.
      */
-    Main() {
+    
+    public static void main(String[] args) {
 
-        Person ivanov = null;
+        
+        
+        Person ivanov = new Person() ;
         Person smith = null;
 
+        
+        class Person {
+            private String name;
+
+            public Person(String name) {
+                this.name = name;
+            }
+            
+            
+        }
+        
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'
          *
