@@ -8,23 +8,20 @@ public class Main {
      * FIXME(Студент): Измените определение метода так, чтобы он стал точкой входа в приложение.
      */
     
-    public static void main(String[] args) {
+    public static void main(String args[]) {
 
+              
+        Person ivanov = new Person("Иванов Иван Иванович");
+        Person smith = new Person("John Edvard Smith"); 
+        
+      
+        
+        System.out.println(ivanov.getFullName());        
+        System.out.println(smith.getFullName()); 
         
         
-        Person ivanov = new Person() ;
-        Person smith = null;
-
-        
-        class Person {
-            private String name;
-
-            public Person(String name) {
-                this.name = name;
-            }
-            
-            
         }
+    
         
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'
@@ -65,4 +62,4 @@ public class Main {
          * отдельной строке.
          */
     }
-}
+

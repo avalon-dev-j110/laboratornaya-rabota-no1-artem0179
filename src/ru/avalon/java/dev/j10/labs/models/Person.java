@@ -11,6 +11,17 @@ package ru.avalon.java.dev.j10.labs.models;
  * </ol>
  */
 public class Person {
+    private String fullName;
+
+    public Person(String fullName) {
+        this.fullName = fullName;
+        
+
+        
+    }
+    
+    
+    
 
     /**
      * Возврвщает полное имя человека.
@@ -33,7 +44,7 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
-        return null;
+        return fullName;
     }
 
     /**
