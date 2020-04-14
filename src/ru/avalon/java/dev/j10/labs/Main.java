@@ -23,8 +23,7 @@ public class Main {
                 "Main st.", 15, 3);      
         
 
-   
-     
+
        
         String ivanovFullName = ivanov.getFullName();
         String smithFullName = smith.getFullName();
