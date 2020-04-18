@@ -1,6 +1,9 @@
 package ru.avalon.java.dev.j10.labs;
 
-import ru.avalon.java.dev.j10.labs.models.Person;
+import java.time.LocalDate;
+import ru.avalon.java.dev.j10.labs.commons.Address;
+import ru.avalon.java.dev.j10.labs.models.*;
+
 
 public class Main {
 
@@ -11,17 +14,34 @@ public class Main {
     public static void main(String args[]) {
 
               
-        Person ivanov = new Person("Иванов Иван Иванович");
-        Person smith = new Person("John Edvard Smith"); 
+        Person ivanov = new Person("Иван", "Иванович", null, "Иванов", LocalDate.of(1987,10,15),
+                123456, LocalDate.of(2010,3,10), "Москва, 10 О/м", "Россия", "Москва",
+                "Ленинский пр.", 20, 10);
         
-      
+        Person smith = new Person("John", null,"Edvard", "Smith", LocalDate.of(1995,8,15),
+                123456, LocalDate.of(2010,11,03), "New York Police Dep.", "US", "New York",
+                "Main st.", 15, 3);      
         
-        System.out.println(ivanov.getFullName());        
-        System.out.println(smith.getFullName()); 
+
+   
+     
+       
+        String ivanovFullName = ivanov.getFullName();
+        String smithFullName = smith.getFullName();
+        
+        String ivanovAddress = ivanov.getAddress();
+        String smithAddress = smith.getAddress();
         
         
-        }
-    
+        
+        System.out.println(ivanovFullName);
+        System.out.println(smithFullName);
+   
+        System.out.println(ivanovAddress);
+        System.out.println(smithAddress);
+                
+                
+        }    
         
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'
@@ -35,6 +55,8 @@ public class Main {
          *    описывающий человека по имени 'John Edvard Smith'.
          */
 
+
+          
         /*
          * TODO(Студент): Создайте несколько строковых переменных:
          *

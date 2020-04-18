@@ -1,4 +1,7 @@
 package ru.avalon.java.dev.j10.labs.models;
+import java.time.LocalDate;
+import ru.avalon.java.dev.j10.labs.commons.Address;
+
 
 /**
  * Представление о человеке.
@@ -9,21 +12,25 @@ package ru.avalon.java.dev.j10.labs.models;
  *     <li>паспортными данными;
  *     <li>пропиской по месту жительства.
  * </ol>
- */
+ */  
 public class Person {
-    private String fullName;
-
-    public Person(String fullName) {
-        this.fullName = fullName;
-        
-
-        
-    }
+   private Passport passportData;
+   private Address livingAddress;
     
-    
-    
+   
+   public Person (String name, String middleName, String secondName, String surname,
+           LocalDate birthDate, int passportNumber, LocalDate receiveDate, 
+           String receivePlace, String country, String city, String street, 
+           int houseNumber, int flatNumber ){
+       
+       passportData = new Passport(name, middleName, secondName, surname, birthDate, passportNumber,   
+        receiveDate, receivePlace);
+       livingAddress = new Address (country, city, street, houseNumber, flatNumber);
+               
+   }
+ 
 
-    /**
+        /**
      * Возврвщает полное имя человека.
      * <p>
      * Если у человека есть Имя, Фамилия и Отчество, то
@@ -44,7 +51,15 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
-        return fullName;
+        
+        if (passportData.getSecondName() == null){
+        String fullName = passportData.getName() + " " + passportData.getMiddleName()
+               + " " + passportData.getSurname();
+        return fullName;}
+        else {String fullName = passportData.getName() + " " + passportData.getSecondName().charAt(0) 
+                + "." + " " + passportData.getSurname();
+        return fullName;}
+         
     }
 
     /**
@@ -56,9 +71,13 @@ public class Person {
      * @return адрес регистрации в виде строки.
      */
     public String getAddress() {
+        
+        String getAddress = livingAddress.getCountry() + ", г." + livingAddress.getCity()
+                + ", " + livingAddress.getStreet() + ", " + livingAddress.getHouseNumber()
+                + "-" + livingAddress.getFlatNumber();
         /*
          * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
          */
-        return null;
+        return getAddress;
     }
 }
